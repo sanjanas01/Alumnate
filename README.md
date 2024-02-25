@@ -73,10 +73,19 @@ To get started with CraftedHope, follow these steps:
    To use Pixel 7 API 34 emulator set up, you can specify it as follows:
    bash
    flutter run -d pixel_7
-   
+
+
 
 ## Contributors
 
 - Sanjana Sudarsan https://github.com/SOS-5
 - Swetha Sriram https://github.com/SwethaSS0420
 - Lohithaa K M https://github.com/Lohi14
+
+
+
+## License
+
+This project is licensed under the MIT License - see the LICENSE.md file for details.
+
+
