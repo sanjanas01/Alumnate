@@ -28,7 +28,6 @@ dependencies:
   geocoding: ^2.0.1
   google_geocoding_api: ^1.4.1
   flutter_google_places: ^0.3.0
-  google_gemini: ^0.0.2
 
 flutter_native_splash:
   color: "#FFFFFF" # Background color of the splash screen
