@@ -4,6 +4,7 @@ import 'package:cloud_firestore/cloud_firestore.dart';
 import 'package:firebase_core/firebase_core.dart';
 import 'package:sls/top.dart';
 import 'bottom.dart';
+import 'logout.dart'; // Import logout.dart file
 
 void main() async {
   WidgetsFlutterBinding.ensureInitialized();
@@ -28,7 +29,7 @@ class MyDetailsPage extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-      appBar: CustomAppBar(),
+      appBar: CustomAppBar(logoutButton: true), // Pass true to indicate the presence of a logout button
       body: FutureBuilder<User?>(
         future: FirebaseAuth.instance.authStateChanges().first,
         builder: (context, snapshot) {
@@ -58,19 +59,37 @@ class MyDetailsPage extends StatelessWidget {
                     child: Column(
                       crossAxisAlignment: CrossAxisAlignment.start,
                       children: [
-                        Text(
-                          'Name: ${data['name'] ?? "Not available"}',
-                          style: TextStyle(fontSize: 18.0),
+                        Center(
+                          child: CircleAvatar(
+                            backgroundImage: AssetImage('assets/user_image.png'), // Provide a default user image
+                            radius: 50,
+                          ),
                         ),
-                        SizedBox(height: 10.0),
-                        Text(
-                          'Email: ${user.email}',
-                          style: TextStyle(fontSize: 18.0),
-                        ),
-                        SizedBox(height: 10.0),
-                        Text(
-                          'Phone: ${data['phone'] ?? "Not available"}',
-                          style: TextStyle(fontSize: 18.0),
+                        SizedBox(height: 20),
+                        Card(
+                          elevation: 4,
+                          child: Padding(
+                            padding: EdgeInsets.all(20),
+                            child: Column(
+                              crossAxisAlignment: CrossAxisAlignment.start,
+                              children: [
+                                Text(
+                                  'Name: ${data['name'] ?? "Not available"}',
+                                  style: TextStyle(fontSize: 18.0),
+                                ),
+                                SizedBox(height: 10.0),
+                                Text(
+                                  'Email: ${user.email}',
+                                  style: TextStyle(fontSize: 18.0),
+                                ),
+                                SizedBox(height: 10.0),
+                                Text(
+                                  'Phone: ${data['phone'] ?? "Not available"}',
+                                  style: TextStyle(fontSize: 18.0),
+                                ),
+                              ],
+                            ),
+                          ),
                         ),
                       ],
                     ),
@@ -82,6 +101,31 @@ class MyDetailsPage extends StatelessWidget {
         },
       ),
       bottomNavigationBar: BottomNavigation(),
+    );
+  }
+}
+
+class CustomAppBar extends StatelessWidget implements PreferredSizeWidget {
+  final bool logoutButton;
+
+  const CustomAppBar({Key? key, required this.logoutButton}) : super(key: key);
+
+  @override
+  Size get preferredSize => Size.fromHeight(50.0);
+
+  @override
+  Widget build(BuildContext context) {
+    return AppBar(
+      title: Text('My Account'),
+      actions: [
+        if (logoutButton)
+          IconButton(
+            icon: Icon(Icons.logout),
+            onPressed: () {
+              Navigator.push(context, MaterialPageRoute(builder: (context) => LogoutPage()));
+            },
+          ),
+      ],
     );
   }
 }

@@ -1,5 +1,4 @@
 import 'package:flutter/material.dart';
-import 'logout.dart';
 
 class CustomAppBar extends StatelessWidget implements PreferredSizeWidget {
   @override
@@ -8,14 +7,14 @@ class CustomAppBar extends StatelessWidget implements PreferredSizeWidget {
   @override
   Widget build(BuildContext context) {
     return AppBar(
-      backgroundColor: Colors.white,
+      backgroundColor: Color(0xFFFA8072), // Background color
       flexibleSpace: Stack(
         children: [
           Positioned(
-            left: 16.0,
+            left: 30.0,
             top: 35.0,
             child: Image.asset(
-              'assets/lg_whitebg.png',
+              'assets/logo2.png',
               height: 60,
               width: 100,
             ),
@@ -24,115 +23,12 @@ class CustomAppBar extends StatelessWidget implements PreferredSizeWidget {
             top: 50.0,
             left: MediaQuery.of(context).size.width / 2 - 60,
             child: Text(
-              'CraftedHope',
+              'Alumnate',
               style: TextStyle(
                 fontFamily: 'Gabriela-Regular',
                 fontSize: 24.0,
                 fontWeight: FontWeight.bold,
                 color: Colors.black,
-              ),
-            ),
-          ),
-          Positioned(
-            top: 40.0,
-            right: 12.0,
-            child: IconButton(
-              onPressed: () {
-                showMenu(
-                  context: context,
-                  position: RelativeRect.fromLTRB(1000, 100, 0, 0),
-                  items: <PopupMenuEntry>[
-                    PopupMenuItem(
-                      child: ListTile(
-                        title: Text(
-                          'My Account',
-                          style: TextStyle(
-                            fontFamily: 'Gabriela-Regular',
-                            fontSize: 18.0,
-                          ),
-                        ),
-                        onTap: () {
-                          Navigator.popAndPushNamed(context, '/myaccount');
-                        },
-                      ),
-                    ),
-                    PopupMenuItem(
-                      child: ListTile(
-                        title: Text(
-                          'Shop',
-                          style: TextStyle(
-                            fontFamily: 'Gabriela-Regular',
-                            fontSize: 18.0,
-                          ),
-                        ),
-                        onTap: () {
-                          Navigator.pushNamed(context, '/shop');
-                        },
-                      ),
-                    ),
-                    PopupMenuItem(
-                      child: ListTile(
-                        title: Text(
-                          'Donate',
-                          style: TextStyle(
-                            fontFamily: 'Gabriela-Regular',
-                            fontSize: 18.0,
-                          ),
-                        ),
-                        onTap: () {
-                          Navigator.popAndPushNamed(context, '/Donate');
-                        },
-                      ),
-                    ),
-                    PopupMenuItem(
-                      child: ListTile(
-                        title: Text(
-                          'Recycle',
-                          style: TextStyle(
-                            fontFamily: 'Gabriela-Regular',
-                            fontSize: 18.0,
-                          ),
-                        ),
-                        onTap: () {
-                          Navigator.popAndPushNamed(context, '/recycle');
-                        },
-                      ),
-                    ),
-                    PopupMenuItem(
-                      child: ListTile(
-                        title: Text(
-                          'Thrift',
-                          style: TextStyle(
-                            fontFamily: 'Gabriela-Regular',
-                            fontSize: 18.0,
-                          ),
-                        ),
-                        onTap: () {
-                          Navigator.popAndPushNamed(context, '/thrift');
-                        },
-                      ),
-                    ),
-                    PopupMenuItem(
-                      child: ListTile(
-                        title: Text(
-                          'Log Out',
-                          style: TextStyle(
-                            fontFamily: 'Gabriela-Regular',
-                            fontSize: 18.0,
-                          ),
-                        ),
-                        onTap: () {
-                          Navigator.popAndPushNamed(context, '/logout');
-                        },
-                      ),
-                    ),
-                  ],
-                );
-              },
-              icon: Image.asset(
-                'assets/lines.png',
-                height: 30,
-                width: 40,
               ),
             ),
           ),

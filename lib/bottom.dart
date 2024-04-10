@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
-
+import 'community.dart';
+import 'follow.dart';
 class BottomNavigation extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
@@ -13,16 +14,25 @@ class BottomNavigation extends StatelessWidget {
               Navigator.pushNamed(context, '/about_us');
             },
           ),
+          
           IconButton(
-            icon: Icon(Icons.message),
+            icon: Icon(Icons.forum),
             onPressed: () {
-              // Handle message button press
+              Navigator.pushNamed(context, '/community_forum');
             },
           ),
+
+          // IconButton(
+          //   icon: Icon(Icons.person_add),
+          //   onPressed: () {
+          //     Navigator.pushNamed(context, '/follow');
+          //   },
+          // ),
+          
           IconButton(
-            icon: Icon(Icons.shopping_cart),
+            icon: Icon(Icons.account_circle),
             onPressed: () {
-              // Handle shopping cart button press
+              Navigator.pushNamed(context, '/myaccount');
             },
           ),
         ],

@@ -4,6 +4,7 @@ import 'about.dart';
 import 'account.dart'; 
 import 'pwd.dart';
 import 'package:cloud_firestore/cloud_firestore.dart';
+import 'info.dart';
 
 class LoginPage extends StatelessWidget {
   final TextEditingController emailController = TextEditingController();
@@ -18,7 +19,7 @@ class LoginPage extends StatelessWidget {
       // Navigate to the home page after successful login
       Navigator.push(
         context,
-        MaterialPageRoute(builder: (context) => AboutUsPage()),
+        MaterialPageRoute(builder: (context) => InfoPage()),
       );
     } catch (e) {
       // Handle login errors here
@@ -38,9 +39,9 @@ class LoginPage extends StatelessWidget {
     return Material( // Add Material widget here
       child: Scaffold(
         appBar: AppBar(
-          backgroundColor: Color(0xFFB99A45),
+          backgroundColor: Color(0xFFFA8072),
           title: Text(
-            'CraftedHope',
+            'Alumnate',
             style: TextStyle(
               fontFamily: 'Gabriela-Regular',
               fontSize: 24.0,
@@ -62,7 +63,7 @@ class LoginPage extends StatelessWidget {
                     mainAxisAlignment: MainAxisAlignment.center,
                     children: [
                       Image.asset(
-                        'assets/lg_whitebg.png',
+                        'assets/logo2.png',
                         height: 100,
                         width: 100,
                       ),
@@ -75,7 +76,7 @@ class LoginPage extends StatelessWidget {
                     decoration: InputDecoration(
                       labelText: 'Username',
                       labelStyle: TextStyle(
-                        color: Color(0xFFB99A45),
+                        color: Color(0xFFFA8072),
                         fontFamily: 'Gabriela-Regular',
                         fontSize: 20.0,
                         fontWeight: FontWeight.bold,
@@ -93,7 +94,7 @@ class LoginPage extends StatelessWidget {
                     decoration: InputDecoration(
                       labelText: 'Password',
                       labelStyle: TextStyle(
-                        color: Color(0xFFB99A45),
+                        color: Color(0xFFFA8072),
                         fontFamily: 'Gabriela-Regular',
                         fontSize: 20.0,
                         fontWeight: FontWeight.bold,
@@ -107,7 +108,7 @@ class LoginPage extends StatelessWidget {
                   ElevatedButton(
                     onPressed: () => signIn(context),
                     style: ElevatedButton.styleFrom(
-                      primary: Color(0xFFB99A45),
+                      primary: Color(0xFFFA8072),
                     ),
                     child: Text(
                       'Login',
@@ -128,7 +129,7 @@ class LoginPage extends StatelessWidget {
                       );
                     },
                     style: ElevatedButton.styleFrom(
-                      primary: Color(0xFFB99A45),
+                      primary: Color(0xFFFA8072),
                     ),
                     child: Text(
                       'Create Account',
@@ -149,7 +150,7 @@ class LoginPage extends StatelessWidget {
                       );
                     },
                     style: ElevatedButton.styleFrom(
-                      primary: Color(0xFFB99A45),
+                      primary: Color(0xFFFA8072),
                     ),
                     child: Text(
                       'Forgot Password?',

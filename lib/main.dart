@@ -1,7 +1,7 @@
 import 'package:flutter/material.dart';
-import 'package:flutter_native_splash/flutter_native_splash.dart';
 import 'package:firebase_core/firebase_core.dart';
-import 'package:sls/wrapper.dart';
+import 'package:firebase_auth/firebase_auth.dart';
+import 'package:cloud_firestore/cloud_firestore.dart';
 import 'login.dart';
 import 'about.dart';
 import 'donate.dart';
@@ -9,16 +9,25 @@ import 'dform.dart';
 import 'Shop.dart';
 import 'recycle.dart';
 import 'rform.dart';
-import 'thrift.dart';
-import 'sell.dart';
-import 'buy.dart';
 import 'logout.dart';
 import 'pwd.dart';
 import 'mydetails.dart';
-
-void main() async{
+import 'community.dart';
+import 'user.dart';
+import 'info.dart';
+import 'follow.dart';
+void main() async {
   WidgetsFlutterBinding.ensureInitialized();
-  await Firebase.initializeApp(); 
+  await Firebase.initializeApp(
+  options: FirebaseOptions(
+    appId: '1:25621128381:android:95887032e27934840243d4',
+    apiKey: 'AIzaSyDhLQ9_vqtBLhIArwAuYlGDCE0_ra_7ZnE',
+    projectId: 'crafted-hope',
+    messagingSenderId: '1234567890',
+    //measurementId: 'G-ABCDEFGH',
+    
+  ),
+);
   runApp(MyApp());
 }
 
@@ -26,58 +35,26 @@ class MyApp extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return MaterialApp(
-      title: 'CraftedHope',
+      title: 'Alumnate',
       theme: ThemeData(
         primarySwatch: Colors.blue,
       ),
       initialRoute: '/',
       routes: {
-        // '/': (context) => SplashScreen(),
-         '/about_us': (context) => AboutUsPage(),
+        '/': (context) => LoginPage(),
+        '/about_us': (context) => InfoPage(),
         '/Donate': (context) => Donate(),
         '/dform': (context) => dform(),
         '/shop': (context) => shop(),
         '/recycle': (context) => rec(),
         '/rform': (context) => rform(),
-        '/thrift': (context) => ThriftPage(),
         '/logout': (context) => LogoutPage(),
-        '/myaccount': (context) => MyDetailsPage(),
         '/login': (context) => LoginPage(),
+        '/myaccount': (context) => MyDetailsPage(),
+        '/community_forum': (context) => CommunityPage(),
+        // '/follow': (context) => UserProfilePage(),
       },
-      home: Wrapper(),
-    );
-  }
-}
-
-class SplashScreen extends StatefulWidget {
-  @override
-  _SplashScreenState createState() => _SplashScreenState();
-}
-
-
-class _SplashScreenState extends State<SplashScreen> {
-  @override
-  void initState() {
-    super.initState();
-    // Navigate to the login page after a delay
-    Future.delayed(Duration(seconds: 2), () {
-      Navigator.of(context).pushReplacement(
-        MaterialPageRoute(
-          builder: (BuildContext context) => LoginPage(),
-        ),
-      );
-    });
-  }
-
-  @override
-  Widget build(BuildContext context) {
-    return Scaffold(
-      body: Center(
-        child: Image.asset(
-          'assets/logo.png', // Adjust the path as per your asset location
-          height: 200, // Adjust the height as needed
-        ),
-      ),
+      debugShowCheckedModeBanner: false,
     );
   }
 }
