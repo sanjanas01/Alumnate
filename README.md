@@ -1,17 +1,25 @@
-# CraftedHope
+# Aluminate
 
-## Description
-
-CraftedHope is a mobile application designed to address the environmental impact of the fashion industry. The app encourages sustainable practices by providing a platform for buying and selling upcycled designer clothes, donating old clothes for reuse, and promoting the reuse of excess cloth pieces by tailors. Additionally, the app allows users to recycle cloth scraps into new products, reducing textile waste sent to landfills.
-
+Aluminate is an app that connects university alumni and current students, providing a platform for networking, mentorship, and career guidance.
 
 ## Features
 
-- Buy upcycled designer clothes
-- Sell excess cloth pieces
-- Donate old clothes for reuse
-- Recycle cloth scraps into new products
+- Connect with alumni and students from your university
+- Discover suggested courses and internships based on your interests
+- Track your personal growth and accomplishments
+- Share your experiences and insights with others
+- Find mentors who can provide guidance and support in your career journey
 
+## Contributing
+
+Contributions are welcome! If you'd like to contribute to Aluminate, please follow these guidelines:
+
+1. Fork the repository
+2. Create a new branch (git checkout -b feature)
+3. Make your changes
+4. Commit your changes (git commit -am 'Add new feature')
+5. Push to the branch (git push origin feature)
+6. Create a new Pull Request
 
 ## Technologies Used
 
@@ -60,32 +68,17 @@ This font has to be installed from Google Fonts
 
 ## Getting Started
 
-To get started with CraftedHope, follow these steps:
+To get started with Aluminate, follow these steps:
 
-1. Clone the repository using the following command.
-   git clone https://github.com/YourUsername/CraftedHope.git
-  
-2. Navigate to the project directory and install the necessary dependencies using:
-   cd CraftedHope
-   flutter pub get
-   
-3. Run the app on your device or emulator (Pixel 7 API 34) (display: pixel_7(1080x2400))
-   To use Pixel 7 API 34 emulator set up, you can specify it as follows:
-   bash
-   flutter run -d pixel_7
+1. Clone the repository
+2. Set up Firebase for authentication, database, and storage
+3. Update the Firebase configuration in the app
+4. Run the app on your device or emulator
 
+## Usage
 
-
-## Contributors
-
-- Sanjana Sudarsan https://github.com/SOS-5
-- Swetha Sriram https://github.com/SwethaSS0420
-- Lohithaa K M https://github.com/Lohi14
-
-
-
-## License
-
-This project is licensed under the MIT License - see the LICENSE.md file for details.
-
-
+- Sign up or log in to access the features
+- Explore suggested courses and internships
+- Connect with alumni and students from your university
+- Share your experiences and insights with others
+- Find mentors who can provide guidance and support in your career journey
