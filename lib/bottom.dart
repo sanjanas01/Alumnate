@@ -1,6 +1,5 @@
 import 'package:flutter/material.dart';
 import 'community.dart';
-import 'follow.dart';
 class BottomNavigation extends StatelessWidget {
   @override
   Widget build(BuildContext context) {

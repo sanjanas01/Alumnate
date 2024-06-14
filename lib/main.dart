@@ -4,18 +4,12 @@ import 'package:firebase_auth/firebase_auth.dart';
 import 'package:cloud_firestore/cloud_firestore.dart';
 import 'login.dart';
 import 'about.dart';
-import 'donate.dart';
-import 'dform.dart';
-import 'Shop.dart';
-import 'recycle.dart';
-import 'rform.dart';
 import 'logout.dart';
 import 'pwd.dart';
 import 'mydetails.dart';
 import 'community.dart';
 import 'user.dart';
 import 'info.dart';
-import 'follow.dart';
 void main() async {
   WidgetsFlutterBinding.ensureInitialized();
   await Firebase.initializeApp(
@@ -43,11 +37,6 @@ class MyApp extends StatelessWidget {
       routes: {
         '/': (context) => LoginPage(),
         '/about_us': (context) => InfoPage(),
-        '/Donate': (context) => Donate(),
-        '/dform': (context) => dform(),
-        '/shop': (context) => shop(),
-        '/recycle': (context) => rec(),
-        '/rform': (context) => rform(),
         '/logout': (context) => LogoutPage(),
         '/login': (context) => LoginPage(),
         '/myaccount': (context) => MyDetailsPage(),
